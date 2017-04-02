@@ -1,0 +1,16 @@
+= apply-site =
+osu!petit's Apply Site.
+License under Copyright. More information in [[Document|LICENSE]]
+
+= Other LICENSE =
+{| class="wikitable"
+! Folder Name
+! Real Name
+! Author
+! License
+|-
+| osu-framework
+| osu-tournament-php
+| hakasenyang
+| MIT
+|}
