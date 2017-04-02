@@ -1,7 +1,7 @@
 <?php
 namespace osu_petit;
-require '../vendor/autoload.php';
-$config = require_once '../config.php';
+require $_SERVER["DOCUMENT_ROOT"].'/vendor/autoload.php';
+$config = require_once $_SERVER["DOCUMENT_ROOT"].'/config.php';
 
 $db_host = $config['db_host'];
 $db_user = $config['db_user'];
