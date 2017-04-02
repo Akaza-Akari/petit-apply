@@ -2,8 +2,8 @@
  
 return [
 	'db_host'	=> 'localhost',
-	'db_name'	=> 'osu',
 	'db_user'	=> 'root',
 	'db_pass'	=> 'awesomepass',
+	'db_name'	=> 'osu',
 	'db_table'	=> 'awesometable',
 ];

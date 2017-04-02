@@ -10,9 +10,10 @@ session_start();
 
 $config = require_once 'config.php';
 $db_host = $config['db_host'];
-$db_name = $config['db_name'];
 $db_user = $config['db_user'];
 $db_pass = $config['db_pass'];
+$db_name = $config['db_name'];
+$db_table = $config['db_table'];
 
 $twitter_access_token = $_SESSION['twitteraccess'];
 $twitter_secret_token = $_SESSION['twittersecret'];
@@ -31,7 +32,7 @@ if ($conn->connect_error) {
 	die('Connection failed: ' . $conn->connect_error);
 }
 $timenow = date("Y-m-d\_H:i:s",time());
-$sql = 'SELECT * FROM `'.$db_name.'` WHERE `osu_id` LIKE '.$osu_id.';';
+$sql = 'SELECT * FROM `'.$db_table.'` WHERE `osu_id` LIKE '.$osu_id.';';
 $result = $conn->query($sql);
 $sqlarray = $result->fetch_array(MYSQLI_ASSOC);
 if(!is_null($sqlarray)) {
