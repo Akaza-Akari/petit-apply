@@ -12,6 +12,8 @@
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<button type="submit" class="btn btn-info g-recaptcha"
 	data-sitekey="6LeXPBsUAAAAAEv6KR7tdQrQXbU0W2NSpajkb092"
-	data-callback="onSubmit" data-size="invisible"><i class="fa fa-sign-in"></i>&nbsp;다음</button>
+	data-callback="console.log('ReCaptcha Passed.')" data-size="invisible">
+		<i class="fa fa-sign-in"></i>&nbsp;다음
+	</button>
 	</center>
 </form>
