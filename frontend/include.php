@@ -1,11 +1,5 @@
 <?php
 namespace osu_petit;
-function giveHost($host_with_subdomain) {
-	$array = explode(".", $host_with_subdomain);
-	return (array_key_exists(count($array) - 2, $array) ? $array[count($array) - 2] : "").".".$array[count($array) - 1];
-}
-ini_set('session.cookie_domain', '.'.giveHost($_SERVER['SERVER_NAME']));
-session_start();
 class FrontEnd {
 
 function defaultIncludes() {
@@ -33,7 +27,7 @@ echo('<meta name="viewport" content="width=device-width, initial-scale=1, maximu
 	src="./js/register.js"
 	crossorigin="anonymous">
 </script>
-'); $_SESSION['osudata'] = $array; }
+'); }
 
 function check($array) {
 $this->defaultIncludes(); ?>

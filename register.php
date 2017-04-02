@@ -1,4 +1,11 @@
 <?php
+	function giveHost($host_with_subdomain) {
+		$array = explode(".", $host_with_subdomain);
+		return (array_key_exists(count($array) - 2, $array) ? $array[count($array) - 2] : "").".".$array[count($array) - 1];
+	}
+	ini_set('session.cookie_domain', '.'.giveHost($_SERVER['SERVER_NAME']));
+	session_start();
+
 	require('osu-framework/include.php');
 	$osu = new OsuTournament\Check();
 
@@ -24,6 +31,7 @@
 			'cf' => isset($cf) ? $cf : '',
 			)
 		);
+		$_SESSION['osudata'] = $this;
 	}
 
 	if(!$_POST['username'] or !$_POST['mode']) {
