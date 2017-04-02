@@ -25,12 +25,12 @@ $twitter_secret_token = $conn->real_escape_string($_SESSION['twittersecret']);
 $twitter_id = $conn->real_escape_string($_SESSION['twitterdata']['id']);
 $twitter_email = $conn->real_escape_string($_SESSION['twitterdata']['email']); 
 
-$osu_id = $_SESSION['osudata']['id'];
-$osu_mode = $_SESSION['osudata']['mode_code'];
+$osu_id = $conn->real_escape_string($_SESSION['osudata']['id']);
+$osu_mode = $conn->real_escape_string($_SESSION['osudata']['mode_code']);
 
-$noti_type = $_SESSION['noti_type'];
-$web_ip = $_SESSION['osudata']['ip'];
-$cf_ip = $_SESSION['osudata']['cf'];
+$noti_type = $conn->real_escape_string($_SESSION['noti_type']);
+$web_ip = $conn->real_escape_string($_SESSION['osudata']['ip']);
+$cf_ip = $conn->real_escape_string($_SESSION['osudata']['cf']);
 
 $timenow = date("Y-m-d\_H:i:s",time());
 $sql = 'SELECT * FROM `'.$db_table.'` WHERE `osu_id` LIKE '.$osu_id.';';
