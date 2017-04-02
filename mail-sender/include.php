@@ -10,7 +10,7 @@ $db_name = $config['db_name'];
 $db_table = $config['db_table'];
 
 use Mailgun\Mailgun;
-$mg = Mailgun::create($config['mailgun_key']);
+$mg = new Mailgun($config['mailgun_key']);
 class Mailer {
 	function sendMail($domain, $from, $to, $subject, $text) {
 		$mg->message()->send($domain, [
