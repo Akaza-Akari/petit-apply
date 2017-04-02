@@ -1,5 +1,8 @@
 <?php
 namespace osu_petit;
+require('config.php');
+require('mail-sender/include.php');
+$mailer = new osu_petit\Mailer();
 class FrontEnd {
 
 function defaultIncludes() {
@@ -61,7 +64,7 @@ global $twitter;?>
 		<i class="fa fa-twitter"></i> 다음</button></a>
 	</div>
 	<div id="email_verify" style="display: none">이메일을 통한 알림은 이메일 주소 인증이 필요합니다. 이메일 주소를 적은 뒤에, 계속 진행해주세요.
-		<form action="https://api.osu.life/doSendMail.php" method="post" onsubmit="return check();" id="emailform">
+		<form action="?" method="post" onsubmit="return check();" id="emailform">
 			<input id="emailvalue" placeholder="E-Mail Address" name="email" required/>
 			<button type="submit" class="btn btn-info"><i class="fa fa-sign-in"></i>&nbsp;다음</button>
 		</form>
@@ -70,4 +73,12 @@ global $twitter;?>
 <script>regform_view();</script>
 
 <?php }
+}
+
+if($_POST['email']) {
+	$email = test_input($_POST["email"]);
+	if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		header('Status: 302', true);
+		header('Location: ../');
+	} else $mailer->sendMail($config['mailgun_key'], $config['mail_from'], $_POST['email'], $config['mail_subject'], $config['mail_text']);
 }
