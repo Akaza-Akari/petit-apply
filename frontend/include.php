@@ -80,5 +80,5 @@ if($_POST['email']) {
 	if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		header('Status: 302', true);
 		header('Location: ../');
-	} else $mailer->sendMail($config['mailgun_key'], $config['mail_from'], $_POST['email'], $config['mail_subject'], $config['mail_text']);
+	} else $mailer->sendMail($_POST['email'], preg_replace('/{{url}}/', 'https://api.osu.life/verify/code=CSFASDFDSFDFVXCVCXBVDFSGERT', $config['mail_text']));
 }

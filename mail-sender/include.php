@@ -12,11 +12,11 @@ $db_table = $config['db_table'];
 use Mailgun\Mailgun;
 $mg = new Mailgun($config['mailgun_key']);
 class Mailer {
-	function sendMail($domain, $from, $to, $subject, $text) {
-		$mg->message()->send($domain, [
-			'from'	 => $from, 
+	function sendMail($to, $text) {
+		$mg->message()->send($config['mailgun_domain'], [
+			'from'	 => $config['mail_from'], 
 			'to'	 => $to, 
-			'subject'=> $subject, 
+			'subject'=> $config['mail_subject'], 
 			'text'	 => $text
 		]);
 	}
