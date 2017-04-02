@@ -23,6 +23,6 @@ function check() {
 	}
 	else {
 		var returnValue = confirm('"'+document.getElementById('emailvalue').value+'"\n이 이메일 주소가 맞습니까?');
-		returnValue ? submit(): '' ;
+		if(returnValue) return true; else return false;
 	}
 }
