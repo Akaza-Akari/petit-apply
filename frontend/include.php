@@ -76,9 +76,9 @@ global $twitter;?>
 }
 
 if($_POST['email']) {
-	$email = $_POST["email"];
+	$email = test_input($_POST["email"]);
 	if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		header('Status: 302', true);
 		header('Location: ../');
-	} else $mailer->sendMail($_POST['email'], $config['mail_text']);
+	} else $mailer->sendMail($config['mailgun_key'], $config['mail_from'], $_POST['email'], $config['mail_subject'], $config['mail_text']);
 }

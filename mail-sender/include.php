@@ -6,11 +6,11 @@ $config = require_once __DIR__.'/../config.php';
 use Mailgun\Mailgun;
 $mg = new Mailgun($config['mailgun_key']);
 class Mailer {
-	function sendMail($to, $text) {
-		$mg->message()->send($config['mailgun_domain'], [
-			'from'	 => $config['mail_from'], 
+	function sendMail($domain, $from, $to, $subject, $text) {
+		$mg->message()->send($domain, [
+			'from'	 => $from, 
 			'to'	 => $to, 
-			'subject'=> $config['mail_subject'], 
+			'subject'=> $subject, 
 			'text'	 => $text
 		]);
 	}
