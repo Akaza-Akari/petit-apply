@@ -3,11 +3,11 @@ function regform_view() {
 }
 
 function noti_twitter() {
-	$("#twitter_oauth").fadeIn();
+	$("#twitter_oauth").fadeIn("slow");
 	$("#email_verify").css('display', 'none');
 };
 function noti_email() {
-	$("#email_verify").fadeIn();
+	$("#email_verify").fadeIn("slow");
 	$("#twitter_oauth").css('display', 'none');
 };
 

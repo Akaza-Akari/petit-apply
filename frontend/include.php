@@ -61,8 +61,8 @@ global $twitter;?>
 		<i class="fa fa-twitter"></i> 다음</button></a>
 	</div>
 	<div id="email_verify" style="display: none">이메일을 통한 알림은 이메일 주소 인증이 필요합니다. 이메일 주소를 적은 뒤에, 계속 진행해주세요.
-		<form style="margin-top:10px!important;" action="https://api.osu.life/doSendMail.php" method="post" onsubmit="return check();" id="emailform">
-			<input style="width:100px!important;" id="emailvalue" placeholder="E-Mail Address" name="email" required/>
+		<form action="https://api.osu.life/doSendMail.php" method="post" onsubmit="return check();" id="emailform">
+			<input id="emailvalue" placeholder="E-Mail Address" name="email" required/>
 			<button type="submit" class="btn btn-info"><i class="fa fa-sign-in"></i>&nbsp;다음</button>
 		</form>
 	</div>
