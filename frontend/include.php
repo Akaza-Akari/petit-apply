@@ -3,9 +3,7 @@ namespace osu_petit;
 class FrontEnd {
 
 function defaultIncludes() {
-global $array;
 echo('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<script src="https://www.google.com/recaptcha/api.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -59,8 +57,15 @@ global $twitter;?>
 		<label class="radio-inline" onclick="noti_email();"><input type="radio" name="noti">E-Mail (인증 필요)</div></label>
 	</div>
 	<div id="twitter_oauth" style="display: none">트위터 DM을 통한 알림은 트위터 계정 인증이 필요합니다. 버튼을 눌러 인증 과정을 시작 해 주세요.
-	<a href="https://api.osu.life/doTwitterLogin.php"><button class="btn btn-info"><i class="fa fa-twitter"></i> 다음</button></a></div>
-	<div id="email_verify" style="display: none">/** Form **/</div>
+		<a href="https://api.osu.life/doTwitterLogin.php"><button class="btn btn-info">
+		<i class="fa fa-twitter"></i> 다음</button></a>
+	</div>
+	<div id="email_verify" style="display: none">이메일을 통한 알림은 이메일 주소 인증이 필요합니다. 이메일 주소를 적은 뒤에, 계속 진행해주세요.
+		<form style="margin-top:10px!important;" action="https://api.osu.life/doSendMail.php" method="post" onsubmit="return check_value();">
+			<input style="width:100px!important;" id="emailform" placeholder="E-Mail Address" name="email" required/>
+			<button type="submit" class="btn btn-info"><i class="fa fa-sign-in"></i>&nbsp;다음</button>
+		</form>
+	</div>
 </div>
 <script>regform_view();</script>
 
