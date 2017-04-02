@@ -15,10 +15,15 @@ $db_pass = $config['db_pass'];
 $db_name = $config['db_name'];
 $db_table = $config['db_table'];
 
-$twitter_access_token = $_SESSION['twitteraccess'];
-$twitter_secret_token = $_SESSION['twittersecret'];
-$twitter_id = $_SESSION['twitterdata']['id'];
-$twitter_email = $_SESSION['twitterdata']['email']; 
+$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
+if ($conn->connect_error) {
+	die('Connection failed: ' . $conn->connect_error);
+}
+
+$twitter_access_token = $conn->real_escape_string($_SESSION['twitteraccess']);
+$twitter_secret_token = $conn->real_escape_string($_SESSION['twittersecret']);
+$twitter_id = $conn->real_escape_string($_SESSION['twitterdata']['id']);
+$twitter_email = $conn->real_escape_string($_SESSION['twitterdata']['email']); 
 
 $osu_id = $_SESSION['osudata']['id'];
 $osu_mode = $_SESSION['osudata']['mode_code'];
@@ -27,10 +32,6 @@ $noti_type = $_SESSION['noti_type'];
 $web_ip = $_SESSION['osudata']['ip'];
 $cf_ip = $_SESSION['osudata']['cf'];
 
-$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
-if ($conn->connect_error) {
-	die('Connection failed: ' . $conn->connect_error);
-}
 $timenow = date("Y-m-d\_H:i:s",time());
 $sql = 'SELECT * FROM `'.$db_table.'` WHERE `osu_id` LIKE '.$osu_id.';';
 $result = $conn->query($sql);
