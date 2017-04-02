@@ -2,7 +2,7 @@
 namespace osu_petit;
 require('config.php');
 require('mail-sender/include.php');
-$mailer = new osu_petit\Mailer();
+$mailer = new Mailer();
 class FrontEnd {
 
 function defaultIncludes() {
