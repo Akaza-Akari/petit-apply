@@ -44,9 +44,9 @@ if(!is_null($sqlarray)) {
 	exit;
 }
 $sql_osu_columes =	'osu_id, osu_mode';
-$sql_osu_insert =	$osu_id.', '.$osu_mode;
+$sql_osu_insert =	$osu_id.'\', \''.$osu_mode;
 $sql_twitter_columes =	'twitter_id, twitter_access_token, twitter_access_secret, twitter_email';
-$sql_twitter_insert =	$twitter_id.', '.$twitter_access_token.', '.$twitter_secret_token.', '.$twitter_email;
+$sql_twitter_insert =	$twitter_id.'\', \''.$twitter_access_token.'\', \''.$twitter_secret_token.'\', \''.$twitter_email;
 $sql = 'INSERT INTO `'.$db_table.'` (number, date, noti_type, '.$sql_osu_columes.', '.$sql_twitter_columes.', web_ip, cf_ip, passed)
 		VALUES (NULL, NULL, \''.$noti_type.'\', \''.$sql_osu_insert.'\', \''.$sql_twitter_insert.'\', \''.$web_ip.'\', \''.$cf_ip.'\', NULL);';
 if ($conn->query($sql) === TRUE) {
