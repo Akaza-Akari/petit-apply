@@ -17,13 +17,12 @@ function validateEmail(email) {
 }
 
 function check() {
-	if(!validateEmail(email.value)) {
+	if(!validateEmail(document.getElementById('emailvalue').value)) {
 		alert("정상적인 이메일 주소가 아닙니다.");
-		email.value.focus();
 		return false;
 	}
 	else {
-		var returnValue = confirm('"'+document.getElementById('emailform').value+'"<br>이 이메일 주소가 맞습니까?');
-		document.write(returnValue);
+		var returnValue = confirm('"'+document.getElementById('emailvalue').value+'"\n이 이메일 주소가 맞습니까?');
+		returnValue ? submit(): '' ;
 	}
 }
