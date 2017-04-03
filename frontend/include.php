@@ -61,7 +61,7 @@ global $twitter;?>
 	</div>
 	<div id="twitter_oauth" style="display: none">트위터 DM을 통한 알림은 트위터 계정 인증이 필요합니다. 버튼을 눌러 인증 과정을 시작 해 주세요.
 		<a href="https://api.osu.life/doTwitterLogin.php"><button class="btn btn-info">
-		<i class="fa fa-twitter"></i> 다음</button></a>
+		<i class="fa fa-twitter"></i>&nbsp;시작</button></a>
 	</div> <?php /*
 	<div id="email_verify" style="display: none">이메일을 통한 알림은 이메일 주소 인증이 필요합니다. 이메일 주소를 적은 뒤에, 계속 진행해주세요.
 		<form action="?" method="post" onsubmit="return check();" id="emailform">
