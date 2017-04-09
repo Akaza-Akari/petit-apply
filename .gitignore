@@ -56,5 +56,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
-config.php
+# Configure Files
+config.ini
