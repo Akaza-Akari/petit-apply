@@ -1,8 +1,5 @@
 <?php
 namespace osu_petit;
-require('config.php');
-require('mail-sender/include.php');
-$mailer = new Mailer();
 class FrontEnd {
 
 function defaultIncludes() {
@@ -57,29 +54,15 @@ global $twitter;?>
 <div id="register_form" style="display: none">
 	<div id="notitype">
 		<label class="radio-inline" onclick="noti_twitter();"><input type="radio" name="noti">트위터 (인증 필요)</div></label>
-		<label class="radio-inline" onclick="noti_email();"><input type="radio" name="noti">E-Mail (인증 필요)</div></label>
+		<label class="radio-inline" onclick="noti_discord();"><input type="radio" name="noti">Discord (인증 필요)</div></label>
 	</div>
 	<div id="twitter_oauth" style="display: none">트위터 DM을 통한 알림은 트위터 계정 인증이 필요합니다. 버튼을 눌러 인증 과정을 시작 해 주세요.
 		<a href="https://api.osu.life/doTwitterLogin.php"><button class="btn btn-info">
 		<i class="fa fa-twitter"></i>&nbsp;시작</button></a>
-	</div> <?php /*
-	<div id="email_verify" style="display: none">이메일을 통한 알림은 이메일 주소 인증이 필요합니다. 이메일 주소를 적은 뒤에, 계속 진행해주세요.
-		<form action="?" method="post" onsubmit="return check();" id="emailform">
-			<input id="emailvalue" placeholder="E-Mail Address" name="email" required/>
-			<button type="submit" class="btn btn-info"><i class="fa fa-sign-in"></i>&nbsp;다음</button>
-		</form>
-	</div> */ ?>
-	<div id="email_verify" style="display: none">준비중입니다. 트위터 알림 기능을 대신 사용해주시면 감사하겠습니다.</div>
+	</div>
+	<div id="discord_oauth" style="display: none">준비중입니다. 대신 트위터 알림 기능을 사용해주시면 감사하겠습니다.</div>
 </div>
 <script>regform_view();</script>
 
 <?php }
 }
-
-/*if($_POST['email']) {
-	$email = $_POST["email"];
-	if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		header('Status: 302', true);
-		header('Location: ../');
-	} else $mailer->sendMail($config['mailgun_key'], $config['mail_from'], $_POST['email'], $config['mail_subject'], $config['mail_text']);
-}*/

@@ -4,10 +4,10 @@ function regform_view() {
 
 function noti_twitter() {
 	$("#twitter_oauth").fadeIn("slow");
-	$("#email_verify").css('display', 'none');
+	$("#discord_oauth").css('display', 'none');
 };
 function noti_email() {
-	$("#email_verify").fadeIn("slow");
+	$("#discord_oauth").fadeIn("slow");
 	$("#twitter_oauth").css('display', 'none');
 };
 
