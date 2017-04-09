@@ -1,5 +1,5 @@
 # petit-apply
-osu!petit's Apply Site.
+osu!petit's Apply Site.  
 License under AGPL. More information in [Document](LICENSE)
 
 ## Configure
