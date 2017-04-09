@@ -28,11 +28,10 @@ echo('<meta name="viewport" content="width=device-width, initial-scale=1, maximu
 </script>
 '); }
 
+function check($array) {
 if(is_null($array['username']) || is_null($array['rank']) || is_null($array['need_set'])) {
 	die('needed values are null');
 }
-
-function check($array) {
 $this->defaultIncludes(); ?>
 입력하신 사용자 이름은 "<?php echo $array['username']; ?>"입니다.<br>
 사용자 정보<br>
