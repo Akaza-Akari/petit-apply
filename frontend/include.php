@@ -1,6 +1,6 @@
 <?php
 namespace osu_petit;
-class FrontEnd {
+class Frontend {
 
 function defaultIncludes() {
 echo('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -27,6 +27,10 @@ echo('<meta name="viewport" content="width=device-width, initial-scale=1, maximu
 	crossorigin="anonymous">
 </script>
 '); }
+
+if(is_null($array['username']) || is_null($array['rank']) || is_null($array['need_set'])) {
+	die('needed values are null');
+}
 
 function check($array) {
 $this->defaultIncludes(); ?>
