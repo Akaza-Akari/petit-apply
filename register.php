@@ -10,7 +10,7 @@
 	$osu = new OsuTournament\Check();
 
 	require('frontend/include.php');
-	$html = new osu_petit\FrontEnd();
+	$html = new osu_petit\Frontend();
 
 	function getData($username, $mode, $mode_full_name) {
 		global $osu;
