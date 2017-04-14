@@ -20,17 +20,17 @@ if ($conn->connect_error) {
 	die('Connection failed: ' . $conn->connect_error);
 }
 
-$twitter_access_token = $conn->real_escape_string($_SESSION['twitteraccess']);
-$twitter_secret_token = $conn->real_escape_string($_SESSION['twittersecret']);
-$twitter_id = $conn->real_escape_string($_SESSION['twitterdata']['id']);
-$twitter_email = $conn->real_escape_string($_SESSION['twitterdata']['email']); 
+$twitter_access_token = (String) $conn->real_escape_string($_SESSION['twitteraccess']);
+$twitter_secret_token = (String) $conn->real_escape_string($_SESSION['twittersecret']);
+$twitter_id = (Int) $conn->real_escape_string($_SESSION['twitterdata']['id']);
+$twitter_email = (String) $conn->real_escape_string($_SESSION['twitterdata']['email']); 
 
-$osu_id = $conn->real_escape_string($_SESSION['osudata']['id']);
-$osu_mode = $conn->real_escape_string($_SESSION['osudata']['mode_code']);
+$osu_id = (Int) $conn->real_escape_string($_SESSION['osudata']['id']);
+$osu_mode = (Int) $conn->real_escape_string($_SESSION['osudata']['mode_code']);
 
-$noti_type = $conn->real_escape_string($_SESSION['noti_type']);
-$web_ip = $conn->real_escape_string($_SESSION['osudata']['ip']);
-$cf_ip = $conn->real_escape_string($_SESSION['osudata']['cf']);
+$noti_type = (String) $conn->real_escape_string($_SESSION['noti_type']);
+$web_ip = (String) $conn->real_escape_string($_SESSION['osudata']['ip']);
+$cf_ip = (String) $conn->real_escape_string($_SESSION['osudata']['cf']);
 
 $timenow = date("Y-m-d\_H:i:s",time());
 $sql = 'SELECT * FROM `'.$db_table.'` WHERE `osu_id` LIKE '.$osu_id.';';
