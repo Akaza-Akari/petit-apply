@@ -1,6 +1,6 @@
-(function() {
+$(window).on('load', function() {
 	$('#register_form').fadeIn('slow');
-})();
+});
 
 function noti_twitter() {
 	$('#twitter_oauth').fadeIn('slow');
@@ -15,7 +15,8 @@ function noti_email() {
 function notiShow(name) {
 	var types = [ 'twitter', 'discord', 'email' ];
 	if(!types.includes(name)) return;
-
+	$('#auth_form:visible').hide();
+	$('#auth_form > ' + name).fadeIn('slow');
 }
 
 function check() {

@@ -28,13 +28,13 @@ class Frontend {
 			crossorigin="anonymous">
 		</script>
 		<script type="text/javascript" src="./js/register.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="validator.min.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="./js/validator.min.js" crossorigin="anonymous"></script>
 		');
 	}
 
 	public function check($array) {
 		if(is_null($array['username']) || is_null($array['rank']) || is_null($array['need_set'])) die('needed values are null');
-		$this->defaultIncludes(); ?>
+		$this->_defaultIncludes(); ?>
 		입력하신 사용자 이름은 "<?php echo $array['username']; ?>"입니다.<br>
 		사용자 정보<br>
 		<?php echo $array['username'] . ' (#' .  $array['rank'] . ') (' . $array['mode'] . ')<br>'; ?>
@@ -61,12 +61,12 @@ class Frontend {
 				<label class="radio-inline" onclick="notiShow('twitter');"><input type="radio" name="noti">Twitter</div></label>
 				<label class="radio-inline" onclick="notiShow('discord');"><input type="radio" name="noti">Discord</div></label>
 			</div>
-			<div id="auth_select">
-				<div id="twitter_oauth" style="display: none">트위터 DM을 통한 알림은 트위터 계정 인증이 필요합니다. 버튼을 눌러 인증 과정을 시작 해 주세요.
+			<div id="auth_form">
+				<div id="twitter" style="display: none">트위터 DM을 통한 알림은 트위터 계정 인증이 필요합니다. 버튼을 눌러 인증 과정을 시작 해 주세요.
 					<a href="<?php echo $this->apiRoot; ?>/doTwitterLogin.php"><button class="btn btn-info">
 					<i class="fa fa-twitter"></i>&nbsp;Start</button></a>
 				</div>
-				<div id="discord_oauth" style="display: none">준비중입니다. 대신 트위터 알림 기능을 사용해주시면 감사하겠습니다.</div>
+				<div id="discord" style="display: none">준비중입니다. 대신 트위터 알림 기능을 사용해주시면 감사하겠습니다.</div>
 			</div>
 		</div>
 	<?php

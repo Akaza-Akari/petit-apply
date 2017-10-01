@@ -7,6 +7,7 @@ NOT WORKING NOW
 Make `config.ini` and edit this.
 ```ini
 [root]
+domain = "example.com"
 api = "https://api.example.com"
 [db]
 host = "localhost"

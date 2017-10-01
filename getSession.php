@@ -1,10 +1,10 @@
 <?php
-ini_set('session.cookie_domain', '.'.giveHost($_SERVER['SERVER_NAME']));
-session_start();
-
 $config = parse_ini_file('config.ini', true);
 $dbConfig = $config['db'];
 $twitterData = [];
+
+ini_set('session.cookie_domain', '.'.$config['root']['domain']);
+session_start();
 
 $conn = new mysqli($dbConfig['host'], $dbConfig['user'], $dbConfig['pass'], $dbConfig['name']);
 if($conn->connect_error) die('Connection failed: '.$conn->connect_error);
