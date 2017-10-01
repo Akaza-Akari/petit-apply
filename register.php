@@ -1,20 +1,21 @@
 <?php
+
 	function giveHost($host_with_subdomain) {
 		$array = explode(".", $host_with_subdomain);
 		return (array_key_exists(count($array) - 2, $array) ? $array[count($array) - 2] : "").".".$array[count($array) - 1];
 	}
+
 	ini_set('session.cookie_domain', '.'.giveHost($_SERVER['SERVER_NAME']));
 	session_start();
 
-	require('osu-framework/include.php');
+	require 'osu-framework/include.php';
 	$osu = new OsuTournament\Check();
 
-	require('frontend/include.php');
+	require 'frontend/include.php';
 	$html = new osu_petit\Frontend();
 
 	function getData($username, $mode, $mode_full_name) {
-		global $osu;
-
+		$osu = $GLOBALS['osu'];
 		$osu->CheckUser($username, $mode);
 		isset($_SERVER['HTTP_CF_CONNECTING_IP']) ? $cf = $_SERVER['HTTP_CF_CONNECTING_IP'] : $cf = false;
 		return(array(

@@ -1,10 +1,13 @@
 # petit-apply
 osu!petit's Apply Site.  
-License under AGPL. More information in [Document](LICENSE)
+License under AGPL. More information in [Document](LICENSE)  
+NOT WORKING NOW
 
 ## Configure
-Edit `config.ini.example` and rename to `config.ini`, or make `config.ini` and edit this.
+Make `config.ini` and edit this.
 ```ini
+[root]
+api = "https://api.example.com"
 [db]
 host = "localhost"
 user = "root"

@@ -1,6 +1,0 @@
-[db]
-host = "localhost"
-user = "root"
-pass = "your-awesome-pass"
-name = "your-awesome-db"
-table = "your-awesome-table"
