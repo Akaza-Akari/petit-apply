@@ -1,9 +1,13 @@
-matrix:
-  include:
-    - language: php
-      php:
-        - '7.0'
-      before_install:
-        - pyrus install pear/PHP_CodeSniffer
-        - phpenv rehash
-      script: phpcs -p -s
+language: php
+
+php:
+  - '7.1'
+
+install:
+  - pyrus install pear/PHP_CodeSniffer
+  - phpenv rehash
+  - nvm install node; nvm use node
+  - npm install --global eslint
+script:
+  - phpcs -p -s
+  - eslint js --ignore-pattern 'lib/'

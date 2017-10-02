@@ -28,7 +28,7 @@ class Frontend {
 			crossorigin="anonymous">
 		</script>
 		<script type="text/javascript" src="./js/register.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="./js/validator.min.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="./js/lib/validator.min.js" crossorigin="anonymous"></script>
 		');
 	}
 
