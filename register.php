@@ -1,5 +1,4 @@
 <?php
-
 	$config = parse_ini_file('config.ini', true);
 
 	ini_set('session.cookie_domain', '.'.$config['root']['domain']);

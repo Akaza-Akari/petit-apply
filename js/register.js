@@ -7,12 +7,14 @@ $('#notitype > label').click(function() {
 	$('#auth_form > #' + this.id).fadeIn('slow');
 });
 
+function reCheck() {
+	return confirm('"'+document.getElementById('emailvalue').value+'"\n이 이메일 주소가 맞습니까?');
+}
+
 function check() {
-	if(!validator.isEmail(document.getElementById('emailvalue').value)) {
-		alert('정상적인 이메일 주소가 아닙니다.');
-		return false;
-	} else {
-		var returnValue = confirm('"'+document.getElementById('emailvalue').value+'"\n이 이메일 주소가 맞습니까?');
-		return returnValue;
-	}
+	const isValidateEmail = validator.isEmail(document.getElementById('emailvalue').value)
+
+	return (isValidateEmail)
+		? reCheck()
+		: alert('정상적인 이메일 주소가 아닙니다.');
 }
