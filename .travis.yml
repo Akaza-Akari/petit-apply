@@ -8,8 +8,10 @@ install:
   - phpenv rehash
   - nvm install node; nvm use node
   - npm install --global eslint
+
 script:
   - phpcs -p -s
   - eslint js --ignore-pattern 'lib/'
+
 notifications:
   webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
