@@ -12,7 +12,6 @@
 	<rule ref="PEAR.ControlStructures.MultiLineCondition"/>
 	<rule ref="PEAR.Files.IncludingFile"/>
 	<rule ref="PEAR.Formatting.MultiLineAssignment"/>
-	<rule ref="PEAR.Functions.FunctionCallSignature"/>
 	<rule ref="PEAR.NamingConventions.ValidFunctionName"/>
 	<rule ref="PEAR.NamingConventions.ValidVariableName"/>
 	<rule ref="PSR2.Files.EndFileNewline"/>
@@ -49,7 +48,7 @@
 	<exclude-pattern>*/tests/*</exclude-pattern>
 	<exclude-pattern>*/data/*</exclude-pattern>
 	<arg name="extensions" value="php"/>
+	<file>.</file>
 	<!-- Under this line, repository setting. -->
 	<exclude-pattern>*/osu-framework/*</exclude-pattern>
-	<file>.</file>
 </ruleset>
