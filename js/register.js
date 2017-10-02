@@ -1,23 +1,11 @@
-$(window).on('load', function() {
-	$('#register_form').fadeIn('slow');
-});
+$('#register_form').fadeIn('slow');
 
-function noti_twitter() {
-	$('#twitter_oauth').fadeIn('slow');
-	$('#discord_oauth').css('display', 'none');
-}
-
-function noti_email() {
-	$('#discord_oauth').fadeIn('slow');
-	$('#twitter_oauth').css('display', 'none');
-}
-
-function notiShow(name) {
+$('#notitype > label').click(function() {
 	var types = [ 'twitter', 'discord', 'email' ];
-	if(!types.includes(name)) return;
-	$('#auth_form:visible').hide();
-	$('#auth_form > ' + name).fadeIn('slow');
-}
+	if(!types.includes(this.id)) return;
+	$('#auth_form > div:visible').hide();
+	$('#auth_form > #' + this.id).fadeIn('slow');
+});
 
 function check() {
 	if(!validator.isEmail(document.getElementById('emailvalue').value)) {
@@ -25,6 +13,6 @@ function check() {
 		return false;
 	} else {
 		var returnValue = confirm('"'+document.getElementById('emailvalue').value+'"\n이 이메일 주소가 맞습니까?');
-		if(returnValue) return true; else return false;
+		return returnValue;
 	}
 }
