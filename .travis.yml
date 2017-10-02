@@ -2,7 +2,7 @@ matrix:
   include:
     - language: php
       php:
-        - '7.1'
+        - '7.0'
       before_install:
         - pyrus install pear/PHP_CodeSniffer
         - phpenv rehash
