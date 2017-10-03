@@ -8,7 +8,7 @@
 	$osu = new OsuTournament\Check();
 
 	require 'frontend/include.php';
-	$html = new osu_petit\Frontend($config['root']['api']);
+	$html = new petitApply\Frontend($config['root']['api']);
 
 	function getData($username, $mode, $mode_full_name) {
 		$osu = $GLOBALS['osu'];
