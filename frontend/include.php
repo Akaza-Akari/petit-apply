@@ -1,6 +1,8 @@
 <?php
 namespace osu_petit;
 
+require './templete.php';
+
 class Frontend {
 
 	public function __construct($apiRoot) {

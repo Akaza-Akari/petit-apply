@@ -7,12 +7,12 @@ $('#notitype > label').click(function() {
 	$('#auth_form > #' + this.id).fadeIn('slow');
 });
 
-function reCheck() {
+function emailConfirm() {
 	return confirm('"'+document.getElementById('emailvalue').value+'"\n이 이메일 주소가 맞습니까?');
 }
 
-function check() {
+function emailCheck() {
 	return (validator.isEmail(document.getElementById('emailvalue').value))
-		? reCheck()
+		? emailConfirm()
 		: alert('정상적인 이메일 주소가 아닙니다.');
 }
