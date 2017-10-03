@@ -12,9 +12,7 @@ function reCheck() {
 }
 
 function check() {
-	const isValidateEmail = validator.isEmail(document.getElementById('emailvalue').value)
-
-	return (isValidateEmail)
+	return (validator.isEmail(document.getElementById('emailvalue').value))
 		? reCheck()
 		: alert('정상적인 이메일 주소가 아닙니다.');
 }

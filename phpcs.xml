@@ -16,7 +16,6 @@
 	<rule ref="PEAR.NamingConventions.ValidVariableName"/>
 	<rule ref="PSR2.Files.EndFileNewline"/>
 	<rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
-	<rule ref="Squiz.PHP.DisallowMultipleAssignments"/>
 	<rule ref="Squiz.PHP.GlobalKeyword"/>
 	<rule ref="Squiz.PHP.Heredoc"/>
 	<rule ref="Squiz.PHP.LowercasePHPFunctions"/>

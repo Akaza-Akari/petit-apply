@@ -6,3 +6,5 @@ composer.phar
 # composer.lock
 
 config.ini
+
+.vscode
